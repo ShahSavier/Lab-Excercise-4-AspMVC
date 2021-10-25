@@ -1,0 +1,80 @@
+﻿@model mvc1153.Models.PosLajuParcel
+
+<head>
+    <title> Pos Laju Invoice </title>
+    <link href="~/css/PostLaju.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- ID and DateTime Properties -->
+    <p>
+        <label>Parcel Id:</label>
+        @Html.DisplayFor(x => x.ViewId)
+    </p>
+    <p>
+        <label>Date and Time</label>
+        @Html.DisplayFor(x => x.ViewDateTime)
+    </p>
+
+    <!-- Sender Properties -->
+    <h5> Sender Information </h5>
+    <p>
+        <label> Sender Name :</label>
+        @Html.DisplayFor(x => x.SenderName)
+    </p>
+    <p>
+        <label> Sender Address :</label>
+        @Html.DisplayFor(x => x.SenderAddress)
+    </p>
+    <p>
+        <label> Sender Phone :</label>
+        @Html.DisplayFor(x => x.SenderPhone)
+    </p>
+    <p>
+        <label> Sender Email :</label>
+        @Html.DisplayFor(x => x.SenderEmail)
+    </p>
+
+    <!-- Receiver Properties -->
+    <h5> Receiver Information </h5>
+    <p>
+        <label> Receiver Name :</label>
+        @Html.DisplayFor(x => x.ReceiverName)
+    </p>
+    <p>
+        <label> Receiver Address :</label>
+        @Html.DisplayFor(x => x.ReceiverAddress)
+    </p>
+    <p>
+        <label> Receiver Phone :</label>
+        @Html.DisplayFor(x => x.ReceiverPhone)
+    </p>
+    <p>
+        <label> Receiver Email :</label>
+        @Html.DisplayFor(x => x.ReceiverEmail)
+    </p>
+
+    <h5>Parcel Information</h5>
+    <p>
+        <label>Weight :</label>
+        <!-- Take information from Dictionary "Value of dictionary"-->
+        @Html.DisplayFor(x => x.DictWeight[Model.IndexWeight])
+    </p>
+    <p>
+        <label>Zone :</label>
+        <!-- Take information from Dictionary "Value of dictionary"-->
+        @Html.DisplayFor(x => x.DictZone[Model.IndexZone])
+    </p>
+    <p>
+        <label>Amount : </label>
+        @Html.DisplayFor(x => x.Amount)
+    </p>
+    <p>
+        @using (Html.BeginForm()) 
+        {
+            <input type="submit" value="Confirm Delete"/>
+        }
+    </p>
+    <p>
+        @Html.ActionLink("Back to list ", "Index")
+    </p>
+</body>

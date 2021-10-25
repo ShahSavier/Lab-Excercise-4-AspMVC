@@ -1,0 +1,20 @@
+CREATE PROCEDURE spInsertParcel
+@parcelid char(10),
+@parceldatetime datetime,
+@sendername varchar(100),
+@senderaddress varchar(max),
+@senderphone varchar(12),
+@senderemail varchar(100),
+@receivername varchar(100),
+@receiveraddress varchar(max),
+@receiverphone varchar(12),
+@receiveremail varchar(100),
+@indexweight int,
+@indexzone int,
+@amount float
+AS
+INSERT INTO PosLajuParcel VAlUES
+(
+@parcelid, @parceldatetime, @sendername, @senderaddress, @senderphone, @senderemail, @receivername , 
+@receiveraddress, @receiverphone, @receiveremail, @indexweight, @indexzone, @amount
+);
